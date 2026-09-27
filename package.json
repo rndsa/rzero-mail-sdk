@@ -1,0 +1,49 @@
+{
+  "name": "@rndsa/rzero-mail",
+  "version": "1.0.0",
+  "description": "High-speed developer SDK for RZero Mail — disposable temp mail, multi-domain routing, and automated OTP extraction.",
+  "keywords": [
+    "temp-mail",
+    "disposable-email",
+    "otp",
+    "otp-extractor",
+    "rzero-mail",
+    "sdk",
+    "email-automation",
+    "cloudflare-workers"
+  ],
+  "author": "ren (https://github.com/rndsa)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rndsa/rzero-mail-sdk.git"
+  },
+  "homepage": "https://github.com/rndsa/rzero-mail-sdk#readme",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs && tsc --emitDeclarationOnly --outDir dist",
+    "test": "node --test test/client.test.mjs"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
+  }
+}
